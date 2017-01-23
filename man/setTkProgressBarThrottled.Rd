@@ -4,8 +4,7 @@
 \alias{setTkProgressBarThrottled}
 \title{A Tk Progress Bar with Throttled Updates}
 \usage{
-setTkProgressBarThrottled(pb, value, title = NULL, label = NULL,
-  updateFreq = 1)
+setTkProgressBarThrottled(pb, value, title = NULL, label = NULL)
 }
 \arguments{
 \item{updateFreq}{}
