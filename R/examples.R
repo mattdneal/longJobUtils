@@ -113,6 +113,16 @@ if (FALSE) {
 
 # animatedPlot
 if (FALSE) {
+  dev.off()
+  walk <- 0
+  xlim <- c(0,10000)
+  for (i in 1:9999) {
+    Sys.sleep(0.001)
+    walk <- c(walk, walk[i] + runif(1) - 0.5)
+    plot(seq_along(walk), walk, type="l", xlim=xlim, ylab="Position", xlab="Iteration")
+  }
+
+  dev.off()
   aplot <- animatedPlot(plot, 5)
   walk <- 0
   xlim <- c(0,10000)
@@ -121,7 +131,6 @@ if (FALSE) {
     walk <- c(walk, walk[i] + runif(1) - 0.5)
     aplot(seq_along(walk), walk, type="l", xlim=xlim, ylab="Position", xlab="Iteration")
   }
-
 }
 
 #closures
@@ -147,4 +156,5 @@ if (FALSE) {
   countFun()
 
   countFun2()
+
 }
