@@ -56,7 +56,6 @@ tkProgressBarThrottled <- function(title = "R progress bar", label = "", min = 0
 setTkProgressBarThrottled <- function(pb, value, title = NULL, label = NULL) {
   if (pb$update() | value==pb$max) {
       setTkProgressBar(pb$progressBar, value, title, label)
-  } else {
   }
 }
 

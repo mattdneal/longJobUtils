@@ -13,8 +13,9 @@
 #' @examples
 #' win <- loggingWindow()
 #' updateLog(win, "Hello World!")
-loggingWindow <- function(height=30, width=100, timestamp=TRUE) {
+loggingWindow <- function(height=30, width=100, timestamp=TRUE, title="Logging window") {
   win <- tktoplevel()
+  tktitle(win) <- title
   win$env$scrv <- ttkscrollbar(win, orient="vertical", command = function(...) tkyview(win$env$txt, ...))
   win$env$txt <- tktext(win,
                         yscrollcommand=function(...) tkset(win$env$scrv, ...),
@@ -41,4 +42,5 @@ loggingWindow <- function(height=30, width=100, timestamp=TRUE) {
 updateLog <- function(win, message) {
   if(win$env$timestamp) message <- paste("[", Sys.time(), "] ", message, sep="")
   tkinsert(win$env$txt, "0.1", paste(message, "\n"))
+  invisible(NULL)
 }

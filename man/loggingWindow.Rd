@@ -4,7 +4,8 @@
 \alias{loggingWindow}
 \title{Create a logging window using TCL/TK}
 \usage{
-loggingWindow(height = 30, width = 100, timestamp = TRUE)
+loggingWindow(height = 30, width = 100, timestamp = TRUE,
+  title = "Logging window")
 }
 \arguments{
 \item{timestamp}{}
